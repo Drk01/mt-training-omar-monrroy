@@ -1,5 +1,4 @@
 import { Action } from "@ngrx/store";
-import { Farm } from "./../../mt-sample-exercise/farm";
 
 export const CARGANDO_FARMS = "[Farms] Cargando Farms";
 export const CARGANDO_FARMS_SUCCESS = "[Farms] Cargando Farms success";
