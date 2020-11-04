@@ -22,7 +22,7 @@
 			</tr>
 		</thead>
 		<tbody *ngIf="!loading" >
-			<tr *ngFor="let farm of farms|keyvalue" >
+			<tr *ngFor="let farm of farms|keyvalue" (click)="showFarm(farm.value)">
 				<td>{{ farm.value.Id }}</td>
 				<td>{{ farm.value.FarmName }}</td>
 				<td>{{ farm.value.ActiveDate }}</td>

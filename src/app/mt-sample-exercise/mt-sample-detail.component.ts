@@ -1,18 +1,18 @@
-import { Component } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
-import { SelectedFarmService } from './selected-farm.service';
-import { takeUntil } from 'rxjs/operators';
-import { Farm } from './farm';
-import { EditService, ToolbarService, SortService } from '@syncfusion/ej2-angular-grids';
+import { Store } from "@ngrx/store";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'mt-sample-detail',
-  templateUrl: './mt-sample-detail.component.html',
+  selector: "mt-sample-detail",
+  templateUrl: "./mt-sample-detail.component.html",
 })
-export class MtSampleDetailComponent {
+export class MtSampleDetailComponent implements OnInit {
+  farm;
 
-  constructor() {
+  constructor(private store: Store) {}
+
+  ngOnInit() {
+    this.store.select("selectedFarm").subscribe((data) => {
+      this.farm = data;
+    });
   }
-
-  
 }
