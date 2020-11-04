@@ -21,6 +21,13 @@
 				<th scope="col">Active Date</th>
 			</tr>
 		</thead>
+		<tbody *ngIf="!loading" >
+			<tr *ngFor="let farm of farms|keyvalue" >
+				<td>{{ farm.value.Id }}</td>
+				<td>{{ farm.value.FarmName }}</td>
+				<td>{{ farm.value.ActiveDate }}</td>
+			</tr>
+		</tbody>
 	</table>
 </div>
 
