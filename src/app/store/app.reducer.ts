@@ -1,11 +1,11 @@
 import { ActionReducerMap } from "@ngrx/store";
 
-import * as reducers from "./reducers";
+import * as listReducers from "./reducers/index";
 
 export interface AppState {
-    farms: reducers.farms
+  farms: listReducers.FarmsState;
 }
 
-export const appReducer: ActionReducerMap<AppState> {
-    farms: reducers.farmsReducer
-}
+export const appReducer: ActionReducerMap<AppState> = {
+  farms: listReducers.farmsReducer,
+};
