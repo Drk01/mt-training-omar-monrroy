@@ -17,8 +17,8 @@ import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { StoreModule } from "@ngrx/store";
 import { EffectsModule } from "@ngrx/effects";
 
-import { appReducers } from "./store/app.reducer";
-import { effectsArr } from "./store/effects";
+import { appReducer } from "./store/app.reducer";
+import { effectsArr } from "./store/effects/index";
 
 @NgModule({
   imports: [
@@ -33,7 +33,7 @@ import { effectsArr } from "./store/effects";
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
     }),
-    StoreModule.forRoot(appReducers),
+    StoreModule.forRoot(appReducer),
     EffectsModule.forRoot(effectsArr),
   ],
   declarations: [
