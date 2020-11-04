@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { DataService } from './data.service';
+import { Component } from "@angular/core";
 import { SelectedFarmService } from './selected-farm.service';
 import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
