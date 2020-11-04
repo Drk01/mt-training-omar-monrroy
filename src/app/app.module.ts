@@ -34,7 +34,7 @@ import { effectsArr } from "./store/effects";
       maxAge: 25, // Retains last 25 states
     }),
     StoreModule.forRoot(appReducers),
-    EffectsModule.forRoot(appEffects),
+    EffectsModule.forRoot(effectsArr),
   ],
   declarations: [
     AppComponent,
