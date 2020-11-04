@@ -13,6 +13,7 @@
     "@ngrx/devtools": "^1.4.0",
     "@ngrx/effects": "^10.0.1",
     "@ngrx/store": "^10.0.1",
+    "@ngrx/store-devtools": "^10.0.1",
     "@syncfusion/ej2-angular-base": "17.3.14",
     "@syncfusion/ej2-angular-buttons": "17.3.14",
     "@syncfusion/ej2-angular-dropdowns": "17.3.14",

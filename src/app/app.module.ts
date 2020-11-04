@@ -13,6 +13,13 @@ import { MtSampleNavComponent } from "./mt-sample-exercise/mt-sample-nav.compone
 import { SAMPLE_COMPONENTS } from "./mt-sample-exercise";
 import { MtAutoCompleteComponent } from "./mt-autocomplete/mt-autocomplete.component";
 
+import { StoreDevtoolsModule } from "@ngrx/store-devtools";
+import { StoreModule } from "@ngrx/store";
+import { EffectsModule } from "@ngrx/effects";
+
+import { appReducers } from "./store/app.reducer";
+import { effectsArr } from "./store/effects";
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -23,6 +30,11 @@ import { MtAutoCompleteComponent } from "./mt-autocomplete/mt-autocomplete.compo
       { path: "list-detail", component: MtSampleNavComponent },
       { path: "auto-complete", component: MtAutoCompleteComponent },
     ]),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+    }),
+    StoreModule.forRoot(appReducers),
+    EffectsModule.forRoot(appEffects),
   ],
   declarations: [
     AppComponent,
