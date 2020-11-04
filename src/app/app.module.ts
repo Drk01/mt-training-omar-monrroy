@@ -1,3 +1,4 @@
+import { APP_BASE_HREF } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
@@ -20,10 +21,21 @@ import { MtAutoCompleteComponent } from "./mt-autocomplete/mt-autocomplete.compo
     SF_MODULES,
     RouterModule.forRoot([
       { path: "list-detail", component: MtSampleNavComponent },
-      { path: "auto-complete", component: MtAutoCompleteComponent }
-    ])
+      { path: "auto-complete", component: MtAutoCompleteComponent },
+    ]),
   ],
-  declarations: [AppComponent, HelloComponent, SAMPLE_COMPONENTS, MtAutoCompleteComponent],
-  bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    HelloComponent,
+    SAMPLE_COMPONENTS,
+    MtAutoCompleteComponent,
+  ],
+  bootstrap: [AppComponent],
+  providers: [
+    {
+      provide: APP_BASE_HREF,
+      useValue: "/",
+    },
+  ],
 })
 export class AppModule {}
